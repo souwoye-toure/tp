@@ -1,0 +1,5 @@
+# Ignorer le fichier de configuration de la BDD locale
+config/database.php
+
+# Ignorer le dossier où seront stockées les images uploadées
+/uploads/
