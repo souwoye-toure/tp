@@ -24,7 +24,7 @@ class PublicationManager {
         ]);
     }
 
-    // Lister uniquement les posts publiés
+    //  les posts publiés
     public function getPublished(): array {
         $stmt = $this->pdo->query("SELECT * FROM publication WHERE is_published = 1 ORDER BY id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@ class PublicationManager {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Modifier le statut (signaler, accepter)
+    // Modification du statut (signaler, accepter)
     public function updateStatus(int $id, int $status): bool {
         $sql = "UPDATE publication SET is_published = :status WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
